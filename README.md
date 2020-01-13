@@ -34,7 +34,7 @@ java.lang.IllegalStateException: Failed to execute CommandLineRunner
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at com.stanchenko.spring.rabbitmq.demo.Application.main(Application.java:16) [classes/:na]
+	at com.stanchenko.spring.rabbitmq.demo.producer.Application.main(Application.java:16) [classes/:na]
 Caused by: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: connect
 ````
 It means that your app didn't manage to create a connection.<br>

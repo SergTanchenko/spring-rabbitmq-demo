@@ -1,4 +1,4 @@
-package com.stanchenko.spring.rabbitmq.demo;
+package com.stanchenko.spring.rabbitmq.demo.producer;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

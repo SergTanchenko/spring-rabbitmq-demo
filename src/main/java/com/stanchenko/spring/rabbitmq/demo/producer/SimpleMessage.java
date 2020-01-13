@@ -1,4 +1,4 @@
-package com.stanchenko.spring.rabbitmq.demo;
+package com.stanchenko.spring.rabbitmq.demo.producer;
 
 import lombok.NoArgsConstructor;
 import lombok.Setter;
