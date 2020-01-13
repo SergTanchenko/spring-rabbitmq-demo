@@ -18,6 +18,11 @@ public class Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		rabbitTemplate.convertAndSend("Hello message!");
+
+		SimpleMessage simpleMessage = new SimpleMessage();
+		simpleMessage.setName("simple name");
+		simpleMessage.setDescription("simple description");
+
+		rabbitTemplate.convertAndSend("simpleExchange", "simpleRoutingKey", simpleMessage);
 	}
 }
