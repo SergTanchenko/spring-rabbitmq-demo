@@ -1,4 +1,7 @@
-Here you can find an implementation of examples described in the tutorial: <br><b>[Learn RabbitMQ: Asynchronous Messaging with Java and Spring](https://www.oreilly.com/library/view/learn-rabbitmq-asynchronous/9781838646189/)</b>
+Here you can find an implementation of examples described in the tutorial: 
+<br><b>[Learn RabbitMQ: Asynchronous Messaging with Java and Spring](https://www.oreilly.com/library/view/learn-rabbitmq-asynchronous/9781838646189/)</b><br>
+There is an example of queue, exchange and binding configuration done via spring config in Java.
+Publishing and retrieving messages.
 
 ## How to run
 
@@ -6,9 +9,14 @@ Here you can find an implementation of examples described in the tutorial: <br><
 RabbitMQ is installed and running on localhost on standard port (5672). <br>In case you use a different host, port or credentials, connections settings would require adjusting. <br>
 Installation guide can be found here: [Downloading and Installing RabbitMQ](https://www.rabbitmq.com/download.html) 
 
-### 2. Start application from IDE
+### 2. Start consumer from IDE
+Find RabbitMQListener.java and run it.
+Consumer will listen the <b>MessageQueue</b> queue and print all published messages to the queue.
 <i>Intellij IDEA was used to develop and run application.</i><br>
+
+### 3. Start producer from IDE
 Find Application.java and run it.<br>
+Producer will publish message to <b>simpleExchange</b> exchange. 
 You should see the similar in the console:
 ````
   .   ____          _            __ _ _

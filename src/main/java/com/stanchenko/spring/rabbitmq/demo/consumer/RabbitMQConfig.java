@@ -1,6 +1,6 @@
 package com.stanchenko.spring.rabbitmq.demo.consumer;
 
-import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.MessageListenerContainer;
@@ -15,7 +15,23 @@ public class RabbitMQConfig {
 
     @Bean
     Queue messageQueue() {
-        return new Queue(MESSAGE_QUEUE, true);
+        return QueueBuilder.durable(MESSAGE_QUEUE)
+                .build();
+    }
+
+    @Bean
+    Exchange messageExchange() {
+        return ExchangeBuilder.topicExchange("simpleExchange")
+                .durable(true)
+                .build();
+    }
+
+    @Bean
+    Binding queueExchangeBinding() {
+        return BindingBuilder.bind(messageQueue())
+                .to(messageExchange())
+                .with("simpleRoutingKey")
+                .noargs();
     }
 
     @Bean
